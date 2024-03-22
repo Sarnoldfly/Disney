@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mapa"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     tools:context=".Fragment01">
-    <RelativeLayout
+
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    </RelativeLayout>
-</fragment>
+            <TextView
+                android:id="@+id/madeCharacters"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/letras"
+                android:textSize="12dp"
+                android:textStyle="italic"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

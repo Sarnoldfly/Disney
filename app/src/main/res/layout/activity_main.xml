@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -9,47 +10,5 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btnTerreno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/gris"
-            android:text="TERRENITO"
-            android:textColor="@color/letras"
-            android:textSize="14dp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/btnRenega"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/gris"
-            android:text="PLAYA DE LA RENEGÀ"
-            android:textColor="@color/letras"
-            android:textSize="14dp"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/btnDesierto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/gris"
-            android:text="DESIERTO DE LAS PALMAS"
-            android:textColor="@color/letras"
-            android:textSize="14dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-
 </RelativeLayout>

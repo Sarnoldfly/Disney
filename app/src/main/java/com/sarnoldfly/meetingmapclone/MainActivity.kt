@@ -10,35 +10,16 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 
 
-class MainActivity : AppCompatActivity(), OnButtonClickListener {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        val btnDessert = findViewById<Button>(R.id.btnDesierto)
-        val btnRenega = findViewById<Button>(R.id.btnRenega)
-        val btnTerreno = findViewById<Button>(R.id.btnTerreno)
-
-        btnDessert.setOnClickListener { onButtonClick(1) }
-        btnRenega.setOnClickListener { onButtonClick(2) }
-        btnTerreno.setOnClickListener { onButtonClick(3) }
-
-
-
-        val fragment = Fragment01()
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit()
-    }
-
-    override fun onButtonClick(nicoClick: Int) {
-        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as Fragment01
-        fragment.traceRoute(nicoClick)
-// el override tiene que estar dentro de la clase. creamos y sobrescribimos la funcion.
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,Fragment01()).commit()
     }
 }
-interface OnButtonClickListener {
-    fun onButtonClick(valor:Int)
-}
-
